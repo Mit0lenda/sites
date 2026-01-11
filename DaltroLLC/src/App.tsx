@@ -1,5 +1,6 @@
 import logoPng from './assets/logo.png'
 import xButtonPng from './assets/x.png'
+import giftGif from './assets/gift_.gif'
 import './App.css'
 
 function App() {
@@ -10,22 +11,27 @@ function App() {
           <img className="hero-logo-image" src={logoPng} alt="Daltro LLC" />
         </div>
 
-        <div className="arrow-block" aria-hidden="true">
-          <div className="arrow-gif" />
+        <div className="gif-block">
+          <img className="hero-gif" src={giftGif} alt="Cooking in progress" />
         </div>
-      </div>
 
-      <div className="link-block">
-        <span className="link-label">Developer</span>
-        <a
-          className="x-link"
-          href="https://x.com/seu_usuario"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Abrir perfil no X"
-        >
-          <img className="x-button" src={xButtonPng} alt="X / Twitter" />
-        </a>
+        <div className="status-block">
+          <p className="status-text">Still cooking. Not ready to serve yet.</p>
+        </div>
+
+        <div className="link-block">
+          <span className="link-label">Developer</span>
+          <a
+            className="x-link"
+            href="https://x.com/jvosz1"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir perfil no X"
+          >
+            <img className="x-button" src={xButtonPng} alt="X / Twitter" />
+          </a>
+          <span className="link-hint">Click me</span>
+        </div>
       </div>
     </main>
   )
