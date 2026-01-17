@@ -187,6 +187,15 @@
   color: rgba(245, 245, 245, 0.72);
 }
 
+.site-footer {
+  margin-top: clamp(0.9rem, 2.6vh, 1.8rem);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(0.6rem, 1.2vh, 0.78rem);
+  letter-spacing: 0.04em;
+  color: rgba(245, 245, 245, 0.55);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
 .x-link:active {
   transform: translateY(1px) scale(0.98);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
@@ -230,6 +239,10 @@
 
   .link-block {
     width: 100%;
+  }
+
+  .site-footer {
+    font-size: clamp(0.58rem, 2.2vw, 0.78rem);
   }
 }
 

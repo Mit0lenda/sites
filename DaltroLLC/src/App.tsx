@@ -33,6 +33,7 @@ function App() {
           <span className="link-hint">Click me</span>
         </div>
       </div>
+      <footer className="site-footer">Joao v. De souza copyright 2026</footer>
     </main>
   )
 }
