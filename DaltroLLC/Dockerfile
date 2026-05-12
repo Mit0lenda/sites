@@ -53,6 +53,9 @@ FROM base AS final
 # Use production node environment by default.
 ENV NODE_ENV=production
 
+# Install serve to run the application.
+RUN npm install -g serve@14.2.6
+
 # Run the application as a non-root user.
 USER node
 
@@ -69,4 +72,4 @@ COPY --from=build /usr/src/app/dist ./dist
 EXPOSE 3000
 
 # Run the application.
-CMD ["npx", "serve", "-s", "dist", "-l", "3000"]
+CMD ["serve", "-s", "dist", "-l", "3000"]
