@@ -53,11 +53,8 @@ FROM base AS final
 # Use production node environment by default.
 ENV NODE_ENV=production
 
-# Install serve to run the application.
-RUN npm install -g serve@14.2.6
-
-# Run the application as a non-root user.
-USER node
+# Install serve as a global dependency (must be done as root before USER node)
+RUN npm install -g serve@14.2.6 && npm cache clean --force
 
 # Copy package.json so that package manager commands can be used.
 COPY package.json .
@@ -67,9 +64,15 @@ COPY package.json .
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/dist ./dist
 
+# Run the application as a non-root user.
+USER node
 
 # Expose the port that the application listens on.
 EXPOSE 3000
+
+# Health check to verify the application is running
+HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # Run the application.
 CMD ["serve", "-s", "dist", "-l", "3000"]
