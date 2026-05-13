@@ -1,9 +1,11 @@
+import { Routes, Route, Link } from 'react-router-dom'
 import logoPng from './assets/logo.png'
 import xButtonPng from './assets/x.png'
 import giftGif from './assets/gift_.gif'
+import PrivacyPolicy from './PrivacyPolicy'
 import './App.css'
 
-function App() {
+function Home() {
   return (
     <main className="landing">
       <div className="top-block">
@@ -33,8 +35,20 @@ function App() {
           <span className="link-hint">Click me</span>
         </div>
       </div>
-      <footer className="site-footer">Joao v. De souza copyright 2026</footer>
+      <footer className="site-footer">
+        <p>Joao v. De souza copyright 2026</p>
+        <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+      </footer>
     </main>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    </Routes>
   )
 }
 

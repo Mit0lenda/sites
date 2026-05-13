@@ -1,0 +1,114 @@
+.privacy-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.privacy-card {
+  width: min(90vw, 800px);
+  background: linear-gradient(
+    150deg,
+    rgba(12, 16, 32, 0.95),
+    rgba(10, 6, 20, 0.95)
+  );
+  border-radius: 24px;
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  animation: fade-up 0.8s ease both;
+}
+
+.back-button {
+  background: rgba(245, 245, 245, 0.05);
+  border: 1px solid rgba(245, 245, 245, 0.15);
+  color: rgba(245, 245, 245, 0.7);
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.65rem;
+  margin-bottom: 2rem;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: rgba(59, 118, 255, 0.15);
+  border-color: rgba(59, 118, 255, 0.4);
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+.privacy-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 2.5rem;
+  color: #3b76ff;
+  text-shadow: 0 4px 0 rgba(255, 88, 201, 0.2);
+  line-height: 1.4;
+}
+
+.privacy-content {
+  line-height: 1.8;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: rgba(245, 245, 245, 0.85);
+  text-align: left;
+}
+
+.privacy-intro {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  color: #fff;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+section h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85rem;
+  color: #ff58c9;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.effective-date {
+  font-style: italic;
+  color: rgba(245, 245, 245, 0.5);
+  margin-top: 3rem;
+  border-top: 1px solid rgba(245, 245, 245, 0.1);
+  padding-top: 1rem;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .privacy-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  .privacy-title {
+    font-size: 1rem;
+  }
+  
+  section h2 {
+    font-size: 0.7rem;
+  }
+}
