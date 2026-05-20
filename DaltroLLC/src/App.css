@@ -212,6 +212,19 @@
   text-decoration: underline;
 }
 
+.footer-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-separator {
+  color: rgba(245, 245, 245, 0.25);
+  user-select: none;
+}
+
 .x-link:active {
   transform: translateY(1px) scale(0.98);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);

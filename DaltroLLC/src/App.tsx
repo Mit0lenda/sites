@@ -3,6 +3,7 @@ import logoPng from './assets/logo.png'
 import xButtonPng from './assets/x.png'
 import giftGif from './assets/gift_.gif'
 import PrivacyPolicy from './PrivacyPolicy'
+import TermsConditions from './TermsConditions'
 import './App.css'
 
 function Home() {
@@ -37,7 +38,11 @@ function Home() {
       </div>
       <footer className="site-footer">
         <p>Joao v. De souza copyright 2026</p>
-        <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+        <div className="footer-links">
+          <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+          <span className="footer-separator">•</span>
+          <Link to="/terms-conditions" className="footer-link">Terms & Conditions</Link>
+        </div>
       </footer>
     </main>
   )
@@ -48,6 +53,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-conditions" element={<TermsConditions />} />
     </Routes>
   )
 }
