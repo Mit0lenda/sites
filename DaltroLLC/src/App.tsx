@@ -1,10 +1,13 @@
 import { Routes, Route, Link } from 'react-router-dom'
 import logoPng from './assets/logo.png'
-import xButtonPng from './assets/x.png'
-import giftGif from './assets/gift_.gif'
+import newIconJpg from './assets/new_icon.jpg'
+import googlePlayBadgeSvg from './assets/google-play-badge.svg'
 import PrivacyPolicy from './PrivacyPolicy'
 import TermsConditions from './TermsConditions'
 import './App.css'
+
+const gameUrl =
+  'https://play.google.com/store/apps/details?id=com.zubarev.boyboy&pcampaignid=web_share'
 
 function Home() {
   return (
@@ -14,34 +17,49 @@ function Home() {
           <img className="hero-logo-image" src={logoPng} alt="Daltro LLC" />
         </div>
 
-        <div className="gif-block">
-          <img className="hero-gif" src={giftGif} alt="Cooking in progress" />
+        <div className="game-block">
+          <a
+            className="game-icon-link"
+            href={gameUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Daltro LLC on Google Play"
+          >
+            <img className="game-icon" src={newIconJpg} alt="Daltro LLC game icon" />
+          </a>
         </div>
 
         <div className="status-block">
-          <p className="status-text">Still cooking. Not ready to serve yet.</p>
+          <p className="status-text">Available to download now.</p>
         </div>
 
-        <div className="link-block">
-          <span className="link-label">Developer</span>
+        <div className="download-block">
           <a
-            className="x-link"
-            href="https://x.com/jvosz1"
+            className="play-badge-link"
+            href={gameUrl}
             target="_blank"
             rel="noreferrer"
-            aria-label="Abrir perfil no X"
+            aria-label="Download Daltro LLC on Google Play"
           >
-            <img className="x-button" src={xButtonPng} alt="X / Twitter" />
+            <img
+              className="play-badge"
+              src={googlePlayBadgeSvg}
+              alt="Get it on Google Play"
+            />
           </a>
-          <span className="link-hint">Click me</span>
         </div>
       </div>
+
       <footer className="site-footer">
-        <p>Joao v. De souza copyright 2026</p>
+        <p>Daltro's LLC copyright 2026</p>
         <div className="footer-links">
-          <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
-          <span className="footer-separator">•</span>
-          <Link to="/terms-conditions" className="footer-link">Terms & Conditions</Link>
+          <Link to="/privacy-policy" className="footer-link">
+            Privacy Policy
+          </Link>
+          <span className="footer-separator">|</span>
+          <Link to="/terms-conditions" className="footer-link">
+            Terms & Conditions
+          </Link>
         </div>
       </footer>
     </main>

@@ -99,92 +99,67 @@
   text-wrap: balance;
 }
 
-.gif-block {
+.game-block {
   display: grid;
   place-items: center;
 }
 
-.hero-gif {
-  display: block;
-  width: min(46vw, 240px);
-  max-height: 24vh;
-  height: auto;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 10px 0 rgba(59, 118, 255, 0.25));
-}
-
-.link-block {
-  display: grid;
-  gap: 0.35rem;
-  place-items: center;
-  margin-top: clamp(0.45rem, 1.2vh, 0.9rem);
-  padding: 0.5rem 0.8rem;
-  width: fit-content;
-  border-radius: 18px;
-  background: rgba(11, 11, 11, 0.6);
-  border: 1px solid rgba(245, 245, 245, 0.08);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4);
-}
-
-.link-label {
-  font-family: 'Press Start 2P', 'Space Grotesk', sans-serif;
-  font-size: clamp(0.56rem, 1.1vh, 0.75rem);
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
-  color: var(--muted);
-}
-
-.x-link {
+.game-icon-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 0.3rem 0.4rem;
+  padding: clamp(0.35rem, 1vh, 0.55rem);
+  border-radius: 24px;
   background: linear-gradient(
     180deg,
     rgba(245, 245, 245, 0.12),
     rgba(245, 245, 245, 0.04)
   );
-  border: 1px solid rgba(245, 245, 245, 0.18);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(245, 245, 245, 0.16);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 88, 201, 0.12);
   cursor: pointer;
-  position: relative;
   transition: transform 0.18s ease, box-shadow 0.18s ease,
-    background-color 0.18s ease, border-color 0.18s ease;
+    border-color 0.18s ease;
 }
 
-.x-link::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 14px;
-  border: 1px solid rgba(59, 118, 255, 0.35);
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.x-link:focus-visible {
+.game-icon-link:focus-visible,
+.play-badge-link:focus-visible {
   outline: 3px dashed var(--accent-alt);
   outline-offset: 6px;
 }
 
-.x-button {
-  width: min(24vw, 84px, 7.5vh);
+.game-icon {
+  display: block;
+  width: min(48vw, 190px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 18px;
   height: auto;
-  image-rendering: pixelated;
-  filter: drop-shadow(0 8px 0 rgba(59, 118, 255, 0.28));
-  animation: x-bounce 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 0 rgba(59, 118, 255, 0.25));
+}
+
+.download-block {
+  display: grid;
+  place-items: center;
+  margin-top: clamp(0.35rem, 1vh, 0.7rem);
+}
+
+.play-badge-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 14px;
+  cursor: pointer;
   transition: transform 0.18s ease, filter 0.18s ease;
 }
 
-.link-hint {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.62rem, 1.1vh, 0.78rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(245, 245, 245, 0.72);
+.play-badge {
+  display: block;
+  width: min(58vw, 210px);
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.34));
 }
 
 .site-footer {
@@ -225,14 +200,9 @@
   user-select: none;
 }
 
-.x-link:active {
+.game-icon-link:active,
+.play-badge-link:active {
   transform: translateY(1px) scale(0.98);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
-}
-
-.x-link:active .x-button {
-  filter: drop-shadow(0 4px 0 rgba(59, 118, 255, 0.25));
-  transform: translateY(2px);
 }
 
 @media (max-width: 640px) {
@@ -257,17 +227,16 @@
     max-height: 20vh;
   }
 
-  .hero-gif {
-    width: min(58vw, 220px);
-    max-height: 22vh;
+  .game-icon {
+    width: min(56vw, 180px);
   }
 
   .status-text {
     font-size: clamp(0.64rem, 2.8vw, 0.82rem);
   }
 
-  .link-block {
-    width: 100%;
+  .play-badge {
+    width: min(74vw, 220px);
   }
 
   .site-footer {
@@ -276,16 +245,16 @@
 }
 
 @media (hover: hover) {
-  .x-link:hover {
-    background: rgba(59, 118, 255, 0.12);
+  .game-icon-link:hover {
     border-color: rgba(59, 118, 255, 0.5);
     box-shadow: 0 16px 28px rgba(0, 0, 0, 0.45),
       0 0 0 2px rgba(59, 118, 255, 0.25);
     transform: translateY(-1px);
   }
 
-  .x-link:hover::after {
-    opacity: 1;
+  .play-badge-link:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
   }
 }
 
@@ -310,22 +279,8 @@
   }
 }
 
-@keyframes x-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .landing > * {
-    animation: none;
-  }
-
-  .x-button {
     animation: none;
   }
 
