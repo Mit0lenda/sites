@@ -2,12 +2,14 @@ import { Routes, Route, Link } from 'react-router-dom'
 import logoPng from './assets/logo.png'
 import newIconJpg from './assets/new_icon.jpg'
 import googlePlayBadgeSvg from './assets/google-play-badge.svg'
+import xButtonPng from './assets/x.png'
 import PrivacyPolicy from './PrivacyPolicy'
 import TermsConditions from './TermsConditions'
 import './App.css'
 
 const gameUrl =
   'https://play.google.com/store/apps/details?id=com.zubarev.boyboy&pcampaignid=web_share'
+const developerUrl = 'https://x.com/jvosz1'
 
 function Home() {
   return (
@@ -47,6 +49,20 @@ function Home() {
               alt="Get it on Google Play"
             />
           </a>
+        </div>
+
+        <div className="link-block">
+          <span className="link-label">Developer</span>
+          <a
+            className="x-link"
+            href={developerUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open developer profile on X"
+          >
+            <img className="x-button" src={xButtonPng} alt="X / Twitter" />
+          </a>
+          <span className="link-hint">Click me</span>
         </div>
       </div>
 
